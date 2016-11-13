@@ -13,6 +13,7 @@ Notes:
 + if N=3, M has to be larger than 25, or you will wait forever (the lower M will force the program hard to find a unique solution). The same for N=4, M>125
 
 # SAMPLE RUN ON 9x9 SUDOKU
+```
           UNIQUE SOLUTION SUDOKU GENERATOR
               NgBaAnh
 
@@ -81,8 +82,10 @@ Fnished. Again? (y/n)
 --------------------------------
 Process exited after 77.55 seconds with return value 0
 Press any key to continue . . .
+```
 
 # SAMPLE RUN ON 16x16 SUDOKU
+```
           UNIQUE SOLUTION SUDOKU GENERATOR
               NgBaAnh
 
@@ -175,3 +178,4 @@ Fnished. Again? (y/n)
 --------------------------------
 Process exited after 18.67 seconds with return value 0
 Press any key to continue . . .
+```
