@@ -1,17 +1,17 @@
 //===== SUDOKU GENERATOR CODE =================================================
 #include "solver.h"
 
-bool legal(int** puzzle, int n, int x, int y, int num) {
+int legal(int** puzzle, int n, int x, int y, int num) {
 	int i, j, size = n * n;
     int rowStart = (int)(x/n) * n;
     int colStart = (int)(y/n) * n;
     for (i = 0; i < size; i++) {
-        if (puzzle[x][i] == num) return false;
-        if (puzzle[i][y] == num) return false;
+        if (puzzle[x][i] == num) return 0;
+        if (puzzle[i][y] == num) return 0;
         if (puzzle[rowStart + (i%n)][colStart + (int)(i/n)] == num)
-			return false;
+			return 0;
     }
-    return true;
+    return 1;
 }
 
 //===== CHECK UNIQUE SOLUTION ===============================================
@@ -39,29 +39,29 @@ int check(int** puzzle, int n, int x, int y, int count) {
 //===== SOLVE SUDOKU ==========================================================
 // Ref: http://codereview.stackexchange.com/questions/37430/sudoku-solver-in-c
 // -- Fixed by: Nguyen Ba Anh
-bool fillSudoku(int** puzzle, int n, int x, int y) {
+int fillSudoku(int** puzzle, int n, int x, int y) {
 	int i, size = n * n;
     if ((x < size) && (y < size)) {
         if (puzzle[x][y] != 0) {
             if ((y+1) < size) return fillSudoku(puzzle, n, x, y+1);
             else if((x+1) < size) return fillSudoku(puzzle, n, x+1, 0);
-            else return true;
+            else return 1;
         } else {
             for (i = 0; i < size; i++) {
                 if (legal(puzzle, n, x, y, i+1)) {
                     puzzle[x][y] = i+1;
                     if ((y+1) < size) { 
-                        if (fillSudoku(puzzle, n, x, y+1)) return true;
+                        if (fillSudoku(puzzle, n, x, y+1)) return 1;
                         else puzzle[x][y] = 0;
                     } else if ((x+1) < size) {
-                        if (fillSudoku(puzzle, n, x+1, 0)) return true;
+                        if (fillSudoku(puzzle, n, x+1, 0)) return 1;
                         else puzzle[x][y] = 0;
-                    } else return true;
+                    } else return 1;
                 }
             }
         }
-        return false;
-    } else return true;
+        return 0;
+    } else return 1;
 }
 //================================= END =======================================
 // June 03, 2015 - Nguyen Ba Anh

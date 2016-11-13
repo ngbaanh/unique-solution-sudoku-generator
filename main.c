@@ -16,7 +16,7 @@ int main() {
 	printf("          UNIQUE SOLUTION SUDOKU GENERATOR   \n");
 	printf("              NgBaAnh                        \n");
 	
-	while(true) {
+	while(1) {
 	    srand(time(NULL));
 	    printf("\n---------- 1: INPUT ----------------------------------\n\n");
 	    int i, j, n, m;
@@ -141,12 +141,13 @@ void writeFile(struct sudoku** table, int n, int m) {
 }
 
 char* randString(int length) {
+		int n;
     char charset[37] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";        
     char* randomString = NULL;
     if(length > 0) {
         randomString = (char*) malloc(sizeof(char) * (length+1));
         if(randomString) { 
-            for(int n = 0; n < length; n++) {            
+            for(n = 0; n < length; n++) {            
                 int key = rand() % 36;
                 randomString[n] = charset[key];
             }

@@ -24,11 +24,11 @@ clean: clean-custom
 $(BIN): $(OBJ)
 	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
 
-generator.o: generator.cpp
-	$(CC) -c generator.cpp -o generator.o $(CFLAGS)
+generator.o: generator.c
+	$(CC) -c generator.c -o generator.o $(CFLAGS)
 
-main.o: main.cpp
-	$(CC) -c main.cpp -o main.o $(CFLAGS)
+main.o: main.c
+	$(CC) -c main.c -o main.o $(CFLAGS)
 
-solver.o: solver.cpp
-	$(CC) -c solver.cpp -o solver.o $(CFLAGS)
+solver.o: solver.c
+	$(CC) -c solver.c -o solver.o $(CFLAGS)

@@ -6,7 +6,7 @@ struct sudoku {
 	int mask; // Cell Visible Mask: 1-Show, 0-Hide.
 };
 
-bool sudoku(struct sudoku**,int,int,int);
+int sudoku(struct sudoku**,int,int,int);
 void hideNumbers(struct sudoku**,int,int);
 void printResult(struct sudoku**,int);
 void showFull(struct sudoku**,int);

@@ -10,8 +10,8 @@
 // -- x, y: row and col indexes.
 // Output:
 // -- table[][]: Sudoku data array.
-// -- logic: true / false (for recursion)
-bool sudoku(struct sudoku** table, int n, int x, int y) {
+// -- logic: 0 / 1 (for recursion)
+int sudoku(struct sudoku** table, int n, int x, int y) {
 	// 1. Delcare some vars
 	int i, j; // loop indexes.
 	int size = n*n; // sudoku width.
@@ -63,19 +63,19 @@ bool sudoku(struct sudoku** table, int n, int x, int y) {
 		// Stop if at the last cell.
 		if ((x == size-1) && (y == size-1)) {
         free(randArray); free(maskArray);
-        return true; 
+        return 1; 
     }
         
     // Or go to the next cell
     if (sudoku(table, n, newX, newY)) {
        free(randArray); free(maskArray);
-       return true;
+       return 1;
     }
     }
     
 	// 7. Release memory.
     free(randArray); free(maskArray);
-    return false;
+    return 0;
 }
 
 //===== PRINT THE RESULT ======================================================
