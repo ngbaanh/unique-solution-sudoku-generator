@@ -179,3 +179,57 @@ Fnished. Again? (y/n)
 Process exited after 18.67 seconds with return value 0
 Press any key to continue . . .
 ```
+
+# And 4x4 sodoku
+```
+          UNIQUE SOLUTION SUDOKU GENERATOR
+              NgBaAnh
+
+---------- 1: INPUT ----------------------------------
+
+Sudoku width N = 2
+Number of opened cells M = 4
+
+---------- 2: RANDOM A SUDOKU TABLE ------------------
+
+Full Sudoku table[4][4]:
+3 1  2 4
+2 4  3 1
+
+4 3  1 2
+1 2  4 3
+
+
+---------- 3: FIND UNIQUE SOLUTION -------------------
+
+Finding unique solution puzzle (tried 50 times)...
+Result: puzzle[4][4]:
+3 -  - -
+- 4  - -
+
+- -  1 -
+- 2  - -
+
+
+---------- 4: SOLVE THE SUDOKU -----------------------
+
+Solving......Done!
+Puzzle[4][4]:
+3 1  2 4
+2 4  3 1
+
+4 3  1 2
+1 2  4 3
+
+
+---------- 5: WRITE TO FILES -------------------------
+
+Puzzle   : output/OXRG75TP6T.txt
+Solution : output/OXRG75TP6T_solved.txt
+
+Fnished. Again? (y/n)
+
+--------------------------------
+Process exited after 8.55 seconds with return value 0
+Press any key to continue . . .
+```
